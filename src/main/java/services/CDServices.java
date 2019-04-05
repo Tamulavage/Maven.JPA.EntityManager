@@ -45,12 +45,10 @@ public class CDServices {
         return em.find(CD.class, id);
     }
 
-//    public List<CD> findAll() {
-//        List<CD> retVal;
-//        TypedQuery<CD> cds =  em.createQuery("SELECT id, title, description, year  from CD", CD.class);
-//        retVal = cds.getResultList();
-//        return retVal;
-//    }
+    public List<Long> findAll() {
+        List cds_ids =  em.createQuery("SELECT id from CD").getResultList();
+        return cds_ids;
+    }
 
     public void removeCD(Long id) {
         CD cd = em.find(CD.class, id);

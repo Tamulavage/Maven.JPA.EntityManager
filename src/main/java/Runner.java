@@ -31,7 +31,7 @@ public class Runner {
         // raise by id
          services.changeCDPrice(cd1.getId(), 1.01);
 
-     //    services.findAll();
+         services.findAll();
 
          services.removeCD(cd1.getId());
     }
