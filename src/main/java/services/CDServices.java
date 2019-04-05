@@ -5,10 +5,9 @@ import entities.Artist;
 
 import entities.CD;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class CDServices {
@@ -45,6 +44,13 @@ public class CDServices {
     public CD findCD(Long id) {
         return em.find(CD.class, id);
     }
+
+//    public List<CD> findAll() {
+//        List<CD> retVal;
+//        TypedQuery<CD> cds =  em.createQuery("SELECT id, title, description, year  from CD", CD.class);
+//        retVal = cds.getResultList();
+//        return retVal;
+//    }
 
     public void removeCD(Long id) {
         CD cd = em.find(CD.class, id);
